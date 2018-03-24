@@ -12,14 +12,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if User.exists() {
+            let vc = ChartViewController(nibName: "ChartViewController", bundle: nil)
+            navigationController?.pushViewController(vc, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func subscribeSelected(_ sender: UIButton) {
+        let vc = InputViewController(nibName: "InputViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: false)
+    }
 
 }
 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vIr-pd-Xyt" customClass="SettingsCell" customModule="ADPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wb8-AK-nmb">
+                    <rect key="frame" x="40" y="8" width="297" height="72"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sND-Lu-cTu">
+                            <rect key="frame" x="17" y="17" width="250" height="17.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="1sz-sU-pY5">
+                            <rect key="frame" x="267" y="0.0" width="30" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="qFg-h4-oRF"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="sND-Lu-cTu" firstAttribute="leading" secondItem="Wb8-AK-nmb" secondAttribute="leading" constant="17" id="9Mx-vV-zOX"/>
+                        <constraint firstAttribute="trailing" secondItem="1sz-sU-pY5" secondAttribute="trailing" id="OpH-An-DMb"/>
+                        <constraint firstItem="sND-Lu-cTu" firstAttribute="top" secondItem="Wb8-AK-nmb" secondAttribute="top" constant="17" id="QBg-7w-6j2"/>
+                        <constraint firstItem="1sz-sU-pY5" firstAttribute="top" secondItem="Wb8-AK-nmb" secondAttribute="top" id="Qqf-Xr-dk1"/>
+                        <constraint firstItem="1sz-sU-pY5" firstAttribute="leading" secondItem="sND-Lu-cTu" secondAttribute="trailing" id="ba7-Oo-0B2"/>
+                        <constraint firstAttribute="bottom" secondItem="1sz-sU-pY5" secondAttribute="bottom" id="eJn-H4-3xF"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sND-Lu-cTu" secondAttribute="bottom" constant="17" id="h6C-Rh-9H6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="20b-5B-ExP" firstAttribute="trailing" secondItem="Wb8-AK-nmb" secondAttribute="trailing" constant="40" id="7hl-UI-YYA"/>
+                <constraint firstItem="Wb8-AK-nmb" firstAttribute="top" secondItem="20b-5B-ExP" secondAttribute="top" constant="8" id="9ux-kn-cJU"/>
+                <constraint firstItem="Wb8-AK-nmb" firstAttribute="leading" secondItem="20b-5B-ExP" secondAttribute="leading" constant="40" id="Khm-jd-bNw"/>
+                <constraint firstItem="20b-5B-ExP" firstAttribute="bottom" secondItem="Wb8-AK-nmb" secondAttribute="bottom" constant="8" id="Rvy-Ll-gWL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="20b-5B-ExP"/>
+            <connections>
+                <outlet property="bubbleView" destination="Wb8-AK-nmb" id="50U-xk-Xaq"/>
+                <outlet property="mainLabel" destination="sND-Lu-cTu" id="ysf-6w-kqR"/>
+            </connections>
+            <point key="canvasLocation" x="-1.5" y="207"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="disclosure" width="8" height="15"/>
+    </resources>
+</document>
