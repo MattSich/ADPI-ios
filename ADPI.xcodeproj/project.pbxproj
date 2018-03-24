@@ -27,6 +27,8 @@
 		402E1A402066D31600D5740E /* DataSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E1A3F2066D31600D5740E /* DataSettingsViewController.swift */; };
 		402E1A422066D9E000D5740E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E1A412066D9E000D5740E /* DateExtension.swift */; };
 		402E1A452066E07E00D5740E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402E1A442066E07E00D5740E /* StoreKit.framework */; };
+		402E1A4920670D0900D5740E /* ChangeDateModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402E1A4820670D0900D5740E /* ChangeDateModal.xib */; };
+		402E1A4B20670D1000D5740E /* ChangeDateModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E1A4A20670D1000D5740E /* ChangeDateModal.swift */; };
 		4055ACAF2061F15E00DD3B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055ACAE2061F15E00DD3B20 /* AppDelegate.swift */; };
 		4055ACB12061F15E00DD3B20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055ACB02061F15E00DD3B20 /* ViewController.swift */; };
 		4055ACB42061F15E00DD3B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4055ACB22061F15E00DD3B20 /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 		402E1A412066D9E000D5740E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		402E1A432066E07000D5740E /* ADPI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ADPI.entitlements; sourceTree = "<group>"; };
 		402E1A442066E07E00D5740E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		402E1A4820670D0900D5740E /* ChangeDateModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeDateModal.xib; sourceTree = "<group>"; };
+		402E1A4A20670D1000D5740E /* ChangeDateModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateModal.swift; sourceTree = "<group>"; };
 		4055ACAB2061F15E00DD3B20 /* ADPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4055ACAE2061F15E00DD3B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4055ACB02061F15E00DD3B20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		402E1A4620670CE200D5740E /* ChangeDateModal */ = {
+			isa = PBXGroup;
+			children = (
+				402E1A4820670D0900D5740E /* ChangeDateModal.xib */,
+				402E1A4A20670D1000D5740E /* ChangeDateModal.swift */,
+			);
+			path = ChangeDateModal;
+			sourceTree = "<group>";
+		};
+		402E1A4720670CF400D5740E /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				402E1A4620670CE200D5740E /* ChangeDateModal */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		4055ACA22061F15E00DD3B20 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +227,7 @@
 		4055ACAD2061F15E00DD3B20 /* ADPI */ = {
 			isa = PBXGroup;
 			children = (
+				402E1A4720670CF400D5740E /* Modals */,
 				402E1A432066E07000D5740E /* ADPI.entitlements */,
 				40CBF32820631AFF009821C5 /* Extensions */,
 				40CBF324206318E7009821C5 /* Model */,
@@ -479,6 +501,7 @@
 				4055ACE62061F43800DD3B20 /* Montserrat-Light.ttf in Resources */,
 				4055ACBC2061F15E00DD3B20 /* LaunchScreen.storyboard in Resources */,
 				4055ACB92061F15E00DD3B20 /* Assets.xcassets in Resources */,
+				402E1A4920670D0900D5740E /* ChangeDateModal.xib in Resources */,
 				402E1A362066CA8F00D5740E /* SettingsViewController.xib in Resources */,
 				4055ACE72061F43800DD3B20 /* Montserrat-Regular.ttf in Resources */,
 				4055ACEA2061F43800DD3B20 /* Montserrat-ExtraLight.ttf in Resources */,
@@ -667,6 +690,7 @@
 				402E1A422066D9E000D5740E /* DateExtension.swift in Sources */,
 				4055ACF42061F6B700DD3B20 /* NumberKey.swift in Sources */,
 				402E1A3D2066CF0500D5740E /* SettingsCell.swift in Sources */,
+				402E1A4B20670D1000D5740E /* ChangeDateModal.swift in Sources */,
 				40CBF31B20631289009821C5 /* ChartViewController.swift in Sources */,
 				40CBF32A20631B08009821C5 /* StringExtension.swift in Sources */,
 				40CBF320206317C6009821C5 /* Projector.swift in Sources */,

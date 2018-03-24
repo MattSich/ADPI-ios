@@ -33,6 +33,10 @@ class User: Codable {
         averageAppreciation = 0.03
         start = Date()
 
+        reload()
+    }
+
+    public func reload() {
         if let user = getSaved(){
             saved = user.saved
             cashFlow = user.cashFlow

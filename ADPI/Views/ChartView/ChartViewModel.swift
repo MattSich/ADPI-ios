@@ -11,7 +11,7 @@ import Charts
 
 class ChartViewModel {
     private var moments: [MomentProjection] = []
-    let user: User!
+    var user: User!
     var currentChartType: ChartType = .equity
     public var selectedMonth: Double = 0 {
         didSet {
@@ -22,6 +22,11 @@ class ChartViewModel {
     public var reloadData: (() -> Void)?
     init() {
         user = User()
+        reloadInputs()
+    }
+
+    public func reloadInputs() {
+        user.reload()
         moments = Projector.all(user)
     }
 

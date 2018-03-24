@@ -55,6 +55,14 @@ class ChartViewController: UIViewController {
         tableView.register(bubbleCellNib, forCellReuseIdentifier: kBubbleCellId)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        model.reloadInputs()
+        setChartData(type: model.currentChartType)
+        dateLabel.text = model.currentDate()
+        tableView.reloadData()
+    }
+
     @IBAction func cashflowSelected(_ sender: UIButton) {
 
         model.currentChartType = .cashflow
