@@ -2,13 +2,16 @@ PODS:
   - Charts (3.0.5):
     - Charts/Core (= 3.0.5)
   - Charts/Core (3.0.5)
+  - SwiftyStoreKit (0.13.0)
 
 DEPENDENCIES:
   - Charts
+  - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  SwiftyStoreKit: df6a58aba530128e1c5d5ae4fe7d191e5ac50d5d
 
-PODFILE CHECKSUM: c2d953ecf3095cfb9517aeabfdeff3361e18f381
+PODFILE CHECKSUM: 2a14c07ead961f4c4ddeed80d4668acca1b75f05
 
 COCOAPODS: 1.4.0

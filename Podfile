@@ -6,6 +6,7 @@ target 'ADPI' do
   use_frameworks!
 
   pod 'Charts'
+  pod 'SwiftyStoreKit'
 
   target 'ADPITests' do
     inherit! :search_paths

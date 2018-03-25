@@ -162,15 +162,51 @@ class InputViewController: UIViewController {
     private func setupViews() {
         let user = User()
 
+        let downPayment = user.downPayment == 0 && user.propertyPrice == 0
+            ? "0"
+            : String(String(user.downPayment/user.propertyPrice * 100).split(separator: ".").first ?? "0")
+
         data = [
-            InputStep(title: "Amount Saved", description: "This is the total amount you currently have available to invest", number: String(user.saved), convert: nil, isPercent: false),
-            InputStep(title: "Current Cashflow", description: "How much are you saving every month? Remember:\ncashflow = income - expenses", number: String(user.cashFlow), convert: nil, isPercent: false),
-            InputStep(title: "Average Property Price", description: "What is the average price of the properties you will be purchasing?", number: String(user.propertyPrice), convert: nil, isPercent: false),
-            InputStep(title: "Down Payment", description: "What % down payment will you be putting down on these properties?", number: String(user.downPayment/user.propertyPrice * 100), convert: String(user.downPayment), isPercent: true),
-            InputStep(title: "Estimated Interest Rate", description: "Estimate the interest rate based on your location and market trend", number: String(user.interestRate * 100), convert: nil, isPercent: true),
-            InputStep(title: "Average Rent", description: "How much are you expecting your rent will be?", number: String(user.averageRent), convert: nil, isPercent: false),
-            InputStep(title: "Estimated Property Expenses", description: "Estimate the average expenses you will have for each of your properties.", number: String(user.propertyExpenses), convert: nil, isPercent: false),
-            InputStep(title: "Estimated Average Appreciation", description: "Your properties will apreciate some factor every year", number: String(user.averageAppreciation * 100), convert: nil, isPercent: true)
+            InputStep(title: "Amount Saved",
+                      description: "This is the total amount you currently have available to invest",
+                      number: String(String(user.saved).split(separator: ".").first ?? "0"),
+                      convert: nil,
+                      isPercent: false),
+            InputStep(title: "Current Cashflow",
+                      description: "How much are you saving every month? Remember:\ncashflow = income - expenses",
+                      number: String(String(user.cashFlow).split(separator: ".").first ?? "0"),
+                      convert: nil,
+                      isPercent: false),
+            InputStep(title: "Average Property Price",
+                      description: "What is the average price of the properties you will be purchasing?",
+                      number: String(String(user.propertyPrice).split(separator: ".").first ?? "0"),
+                      convert: nil,
+                      isPercent: false),
+            InputStep(title: "Down Payment",
+                      description: "What % down payment will you be putting down on these properties?",
+                      number: downPayment,
+                      convert: String(user.downPayment),
+                      isPercent: true),
+            InputStep(title: "Estimated Interest Rate",
+                      description: "Estimate the interest rate based on your location and market trend",
+                      number: String(String(user.interestRate * 100).split(separator: ".").first ?? "0"),
+                      convert: nil,
+                      isPercent: true),
+            InputStep(title: "Average Rent",
+                      description: "How much are you expecting your rent will be?",
+                      number: String(String(user.averageRent).split(separator: ".").first ?? "0") ,
+                      convert: nil,
+                      isPercent: false),
+            InputStep(title: "Estimated Property Expenses",
+                      description: "Estimate the average expenses you will have for each of your properties.",
+                      number: String(String(user.propertyExpenses).split(separator: ".").first ?? "0"),
+                      convert: nil,
+                      isPercent: false),
+            InputStep(title: "Estimated Average Appreciation",
+                      description: "Your properties will apreciate some factor every year",
+                      number: String(String(user.averageAppreciation * 100).split(separator: ".").first ?? "0") ,
+                      convert: nil,
+                      isPercent: true)
         ]
         var index = 0
         for pageData in data {
