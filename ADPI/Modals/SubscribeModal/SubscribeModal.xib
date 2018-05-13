@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscribeModal" customModule="ADPI" customModuleProvider="target">
+            <connections>
+                <outlet property="doneButton" destination="fFe-FR-SeR" id="btP-Jf-IrK"/>
+                <outlet property="modalView" destination="0zR-Cy-43q" id="Pj2-nL-pJu"/>
+                <outlet property="shroud" destination="dsI-Gb-F5C" id="LaI-2L-c5S"/>
+                <outlet property="verticalCenterConstraint" destination="gWJ-qP-f6s" id="t5F-1w-JTc"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cde-Kz-ymg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsI-Gb-F5C">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="xmx-7I-YIO"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zR-Cy-43q">
+                    <rect key="frame" x="30.5" y="141" width="315" height="405"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Become a member for only $3.99/month" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwC-tX-b0B">
+                            <rect key="frame" x="20" y="20" width="275" height="39.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFe-FR-SeR">
+                            <rect key="frame" x="0.0" y="325" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.83407419920000003" green="0.27626156810000002" blue="0.21572355930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="mcK-8g-YKG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                            <state key="normal" title="Subscribe">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="doneSelected:" destination="-1" eventType="touchUpInside" id="xFL-iU-NjI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p55-2Q-ua1">
+                            <rect key="frame" x="0.0" y="365" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.83407419920000003" green="0.27626156810000002" blue="0.21572355930000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="7Eb-go-wSd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                            <state key="normal" title="cancel">
+                                <color key="titleColor" red="0.83407419919967651" green="0.27626156806945801" blue="0.21572355926036835" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="cancel:" destination="-1" eventType="touchUpInside" id="8k1-OX-KJE"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeH-nH-QYl">
+                            <rect key="frame" x="10" y="69.5" width="295" height="235.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <mutableString key="text">When you subscribe, your iTunes account will be charged $3.99 USD. The subscription is for 1 month and automatically renews unless auto-renew is turned off at least 24-hours before the end of the current 1 month period. The subscription grants you access to all forcasting capabilities and any updates to the calculations as the market changes. Your account will be charged $3.99 USD for renewal within 24-hours prior to the end of the current 1 month period. You can manage and cancel your subscription in your apple account settings. We provide a link to those settings in the settings of this app. By subscribing you agree to our terms of service and privacy policy.</mutableString>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="p55-2Q-ua1" secondAttribute="trailing" id="0Ft-bl-ZGl"/>
+                        <constraint firstItem="bwC-tX-b0B" firstAttribute="top" secondItem="0zR-Cy-43q" secondAttribute="top" constant="20" id="38j-We-DU9"/>
+                        <constraint firstItem="fFe-FR-SeR" firstAttribute="top" secondItem="BeH-nH-QYl" secondAttribute="bottom" constant="20" id="3qF-VV-pg5"/>
+                        <constraint firstItem="p55-2Q-ua1" firstAttribute="leading" secondItem="0zR-Cy-43q" secondAttribute="leading" id="GXo-Ar-2Zv"/>
+                        <constraint firstItem="BeH-nH-QYl" firstAttribute="leading" secondItem="0zR-Cy-43q" secondAttribute="leading" constant="10" id="GZP-oO-HU1"/>
+                        <constraint firstAttribute="trailing" secondItem="BeH-nH-QYl" secondAttribute="trailing" constant="10" id="Lr7-ec-soR"/>
+                        <constraint firstItem="bwC-tX-b0B" firstAttribute="leading" secondItem="0zR-Cy-43q" secondAttribute="leading" constant="20" id="NqI-lC-A5D"/>
+                        <constraint firstAttribute="trailing" secondItem="bwC-tX-b0B" secondAttribute="trailing" constant="20" id="PZ0-yx-5aG"/>
+                        <constraint firstItem="p55-2Q-ua1" firstAttribute="top" secondItem="fFe-FR-SeR" secondAttribute="bottom" id="YAM-TJ-ENg"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="315" id="eiT-nX-7Qb"/>
+                        <constraint firstAttribute="bottom" secondItem="p55-2Q-ua1" secondAttribute="bottom" id="fnX-v5-btt"/>
+                        <constraint firstAttribute="trailing" secondItem="fFe-FR-SeR" secondAttribute="trailing" id="kJm-gJ-Vbv"/>
+                        <constraint firstItem="BeH-nH-QYl" firstAttribute="top" secondItem="bwC-tX-b0B" secondAttribute="bottom" constant="10" id="lTg-3R-2wM"/>
+                        <constraint firstItem="fFe-FR-SeR" firstAttribute="leading" secondItem="0zR-Cy-43q" secondAttribute="leading" id="zd7-Q6-U5r"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dsI-Gb-F5C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Xm-2h-t29"/>
+                <constraint firstItem="dsI-Gb-F5C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OJb-vk-oik"/>
+                <constraint firstItem="0zR-Cy-43q" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="QMg-nx-omW"/>
+                <constraint firstItem="dsI-Gb-F5C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="UdF-0t-dgF"/>
+                <constraint firstItem="dsI-Gb-F5C" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="VqU-SR-H7P"/>
+                <constraint firstItem="0zR-Cy-43q" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="gWJ-qP-f6s"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

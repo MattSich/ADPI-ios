@@ -10,6 +10,9 @@
 		09627F83E0C81498DB6946D3 /* Pods_ADPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6440CAEF0A8837081849F4C5 /* Pods_ADPI.framework */; };
 		198ABF21E56191B6B6378EAB /* Pods_ADPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464401E2F039AF69CDE5C271 /* Pods_ADPITests.framework */; };
 		3700E1291DA5B3AB5F80B8AD /* Pods_ADPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634322ACC676E7CA2757EA99 /* Pods_ADPIUITests.framework */; };
+		4001422E209E15EF002A3A52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4001422D209E15EF002A3A52 /* GoogleService-Info.plist */; };
+		4001423120A105F8002A3A52 /* SubscribeModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4001423020A105F8002A3A52 /* SubscribeModal.xib */; };
+		4001423320A10603002A3A52 /* SubscribeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4001423220A10603002A3A52 /* SubscribeModal.swift */; };
 		402470DB2063DD7400C32B28 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402470DA2063DD7400C32B28 /* ColorExtension.swift */; };
 		402470DD206455B300C32B28 /* BubbleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402470DC206455B300C32B28 /* BubbleCell.xib */; };
 		402470DF206455BB00C32B28 /* BubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402470DE206455BB00C32B28 /* BubbleCell.swift */; };
@@ -48,6 +51,7 @@
 		4055ACF42061F6B700DD3B20 /* NumberKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055ACF32061F6B700DD3B20 /* NumberKey.swift */; };
 		4055ACF62061FD5B00DD3B20 /* InputItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4055ACF52061FD5B00DD3B20 /* InputItemView.xib */; };
 		4055ACF82061FF3800DD3B20 /* InputItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055ACF72061FF3800DD3B20 /* InputItemView.swift */; };
+		405767DA206F066400F063ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405767D9206F066400F063ED /* Constants.swift */; };
 		40CBF31B20631289009821C5 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBF31A20631289009821C5 /* ChartViewController.swift */; };
 		40CBF31D2063129E009821C5 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40CBF31C2063129E009821C5 /* ChartViewController.xib */; };
 		40CBF320206317C6009821C5 /* Projector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBF31F206317C6009821C5 /* Projector.swift */; };
@@ -79,6 +83,9 @@
 /* Begin PBXFileReference section */
 		1AE9D0C83290390469B7CF31 /* Pods-ADPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPIUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADPIUITests/Pods-ADPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		39430577881AC2A863FAE984 /* Pods-ADPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADPI/Pods-ADPI.debug.xcconfig"; sourceTree = "<group>"; };
+		4001422D209E15EF002A3A52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4001423020A105F8002A3A52 /* SubscribeModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeModal.xib; sourceTree = "<group>"; };
+		4001423220A10603002A3A52 /* SubscribeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeModal.swift; sourceTree = "<group>"; };
 		402470DA2063DD7400C32B28 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		402470DC206455B300C32B28 /* BubbleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleCell.xib; sourceTree = "<group>"; };
 		402470DE206455BB00C32B28 /* BubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCell.swift; sourceTree = "<group>"; };
@@ -121,6 +128,7 @@
 		4055ACF32061F6B700DD3B20 /* NumberKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberKey.swift; sourceTree = "<group>"; };
 		4055ACF52061FD5B00DD3B20 /* InputItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputItemView.xib; sourceTree = "<group>"; };
 		4055ACF72061FF3800DD3B20 /* InputItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItemView.swift; sourceTree = "<group>"; };
+		405767D9206F066400F063ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		40CBF31A20631289009821C5 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		40CBF31C2063129E009821C5 /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 		40CBF31F206317C6009821C5 /* Projector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projector.swift; sourceTree = "<group>"; };
@@ -165,6 +173,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4001422F20A105CF002A3A52 /* SubscribeModal */ = {
+			isa = PBXGroup;
+			children = (
+				4001423020A105F8002A3A52 /* SubscribeModal.xib */,
+				4001423220A10603002A3A52 /* SubscribeModal.swift */,
+			);
+			path = SubscribeModal;
+			sourceTree = "<group>";
+		};
 		402E1A342066CA8000D5740E /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +214,7 @@
 		402E1A4720670CF400D5740E /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				4001422F20A105CF002A3A52 /* SubscribeModal */,
 				402E1A4620670CE200D5740E /* ChangeDateModal */,
 			);
 			path = Modals;
@@ -227,6 +245,7 @@
 		4055ACAD2061F15E00DD3B20 /* ADPI */ = {
 			isa = PBXGroup;
 			children = (
+				4001422D209E15EF002A3A52 /* GoogleService-Info.plist */,
 				402E1A432066E07000D5740E /* ADPI.entitlements */,
 				40CBF32820631AFF009821C5 /* Extensions */,
 				40CBF324206318E7009821C5 /* Model */,
@@ -242,6 +261,7 @@
 				4055ACBA2061F15E00DD3B20 /* LaunchScreen.storyboard */,
 				4055ACBD2061F15E00DD3B20 /* Info.plist */,
 				4055ACB52061F15E00DD3B20 /* ADPI.xcdatamodeld */,
+				405767D9206F066400F063ED /* Constants.swift */,
 			);
 			path = ADPI;
 			sourceTree = "<group>";
@@ -496,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4001423120A105F8002A3A52 /* SubscribeModal.xib in Resources */,
 				4055ACE82061F43800DD3B20 /* Montserrat-SemiBold.ttf in Resources */,
 				40CBF31D2063129E009821C5 /* ChartViewController.xib in Resources */,
 				4055ACE62061F43800DD3B20 /* Montserrat-Light.ttf in Resources */,
@@ -508,6 +529,7 @@
 				402470DD206455B300C32B28 /* BubbleCell.xib in Resources */,
 				402E1A3B2066CEBC00D5740E /* SettingsCell.xib in Resources */,
 				4055ACE92061F43800DD3B20 /* Montserrat-ExtraBold.ttf in Resources */,
+				4001422E209E15EF002A3A52 /* GoogleService-Info.plist in Resources */,
 				4055ACEB2061F43800DD3B20 /* Montserrat-Medium.ttf in Resources */,
 				4055ACF62061FD5B00DD3B20 /* InputItemView.xib in Resources */,
 				4055ACB42061F15E00DD3B20 /* Main.storyboard in Resources */,
@@ -588,12 +610,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ADPI/Pods-ADPI-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -689,7 +715,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				402E1A292065274400D5740E /* User.swift in Sources */,
+				405767DA206F066400F063ED /* Constants.swift in Sources */,
 				402E1A422066D9E000D5740E /* DateExtension.swift in Sources */,
+				4001423320A10603002A3A52 /* SubscribeModal.swift in Sources */,
 				4055ACF42061F6B700DD3B20 /* NumberKey.swift in Sources */,
 				402E1A3D2066CF0500D5740E /* SettingsCell.swift in Sources */,
 				402E1A4B20670D1000D5740E /* ChangeDateModal.swift in Sources */,

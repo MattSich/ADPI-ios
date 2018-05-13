@@ -19,4 +19,5 @@ struct MomentProjection: Codable {
     let numberOfProperties: Int
     let moneyInBank: Float
     let totalInterestPaid: Float
+    let equityGained: Float
 }

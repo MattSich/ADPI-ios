@@ -9,6 +9,12 @@
 import Foundation
 import CoreGraphics
 
+struct MortgagePaymentBreakdown {
+    let interest: CGFloat
+    let principle: CGFloat
+    let month: Int
+}
+
 class Projector {
 
     static let numberOfYears: Int = 30
@@ -27,6 +33,7 @@ class Projector {
         var interestPayments: CGFloat = 0
 
         let monthlyPayment = amortCalc(loanAmount: CGFloat(user.propertyPrice - user.downPayment), interestRate: CGFloat(user.interestRate), numberOfPayments: monthsPerYear*numberOfYears)
+        let loanSchedule = paymentBreakdown(totalMortgage: monthlyPayment, loanAmount: CGFloat(user.propertyPrice - user.downPayment), rate: CGFloat(user.interestRate), numberOfPeriods: monthsPerYear*numberOfYears)
 
         for month in 1...(monthsPerYear*numberOfYears) {
 
@@ -38,24 +45,27 @@ class Projector {
             currentSavings += cashflow
 
             // check if ready to buy
-            if currentSavings >= user.downPayment {
+            var purchaseLimit = 10
+            while currentSavings >= user.downPayment && purchaseLimit > 0 {
                 // Buy new house
                 currentSavings -= user.downPayment
                 properties.append(Property(monthBought: month, value: user.propertyPrice, interestPaid: 0, principlePaid: 0))
+                purchaseLimit -= 1;
             }
 
             var propertyEquity: Float = 0
             var properyValues: Float = 0
             // appreciate properties
             for (index, property) in properties.enumerated() {
-                let principle = monthlyPayment * 0.03/CGFloat(monthsPerYear) * CGFloat(month - property.monthBought)
-                let interest = monthlyPayment - (monthlyPayment * 0.03/12 * CGFloat(month - property.monthBought))
+                let paymentBreakdown = loanSchedule[month - 1]
+                let principle = paymentBreakdown.principle
+                let interest = paymentBreakdown.interest
 
                 principalPayments += principle
                 interestPayments += interest
 
-                principalPayment = principle
-                interestPayment = interest
+                principalPayment += principle
+                interestPayment += interest
 
                 properties[index].principlePaid += Float(principle)
                 properties[index].interestPaid += Float(interest)
@@ -74,7 +84,8 @@ class Projector {
                 interestPayment: Float(interestPayment),
                 numberOfProperties: properties.count,
                 moneyInBank: currentSavings,
-                totalInterestPaid: Float(interestPayments)
+                totalInterestPaid: Float(interestPayments),
+                equityGained: Float(principalPayment)
                 )
             )
         }
@@ -111,5 +122,21 @@ class Projector {
 
     private static func fvifa(rate : Double, nper : Double) -> Double {
         return (rate == 0) ? nper : pow1pm1(x: rate, y: nper) / rate
+    }
+
+    public static func paymentBreakdown(totalMortgage: CGFloat, loanAmount: CGFloat, rate: CGFloat, numberOfPeriods: Int) -> [MortgagePaymentBreakdown] {
+        let periodInt = (rate / 12)
+        var amount: CGFloat = loanAmount
+        var result: [MortgagePaymentBreakdown] = []
+        for i in 1...numberOfPeriods {
+            if amount < 0 {
+                break;
+            }
+            let interestPayment = amount * CGFloat(periodInt)
+            let principlePayment = totalMortgage - interestPayment
+            amount = amount - principlePayment
+            result.append(MortgagePaymentBreakdown(interest: interestPayment, principle: principlePayment, month: i))
+        }
+        return result
     }
 }

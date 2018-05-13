@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 struct InputStep {
     let title: String
@@ -157,6 +158,17 @@ class InputViewController: UIViewController {
         if thenGoHome {
             navigationController?.popToRootViewController(animated: false)
         }
+
+        Analytics.logEvent("onboarding_finished", parameters: [
+            "saved": "\(newUser.saved)" as NSObject,
+            "cashFlow": "\(newUser.cashFlow)" as NSObject,
+            "propertyPrice": "\(newUser.propertyPrice)" as NSObject,
+            "downPayment": "\(newUser.downPayment)" as NSObject,
+            "interestRate": "\(newUser.interestRate)" as NSObject,
+            "averageRent": "\(newUser.averageRent)" as NSObject,
+            "propertyExpenses": "\(newUser.propertyExpenses)" as NSObject,
+            "averageAppreciation": "\(newUser.averageAppreciation)" as NSObject,
+            ])
     }
 
     private func setupViews() {
@@ -172,8 +184,8 @@ class InputViewController: UIViewController {
                       number: String(String(user.saved).split(separator: ".").first ?? "0"),
                       convert: nil,
                       isPercent: false),
-            InputStep(title: "Current Cashflow",
-                      description: "How much are you saving every month? Remember:\ncashflow = income - expenses",
+            InputStep(title: "Monthly Savings",
+                      description: "How much do you save every month? Consider any current rental property cashflow or any monthly contributions you make towards future investment.",
                       number: String(String(user.cashFlow).split(separator: ".").first ?? "0"),
                       convert: nil,
                       isPercent: false),
@@ -188,22 +200,22 @@ class InputViewController: UIViewController {
                       convert: String(user.downPayment),
                       isPercent: true),
             InputStep(title: "Estimated Interest Rate",
-                      description: "Estimate the interest rate based on your location and market trend",
+                      description: "Estimate the your average loan interest rate based on your credit score, home location, price, loan amount, etc.",
                       number: String(String(user.interestRate * 100).split(separator: ".").first ?? "0"),
                       convert: nil,
                       isPercent: true),
             InputStep(title: "Average Rent",
-                      description: "How much are you expecting your rent will be?",
+                      description: "How much are you expecting your average rent for these rental properties will be?",
                       number: String(String(user.averageRent).split(separator: ".").first ?? "0") ,
                       convert: nil,
                       isPercent: false),
             InputStep(title: "Estimated Property Expenses",
-                      description: "Estimate the average expenses you will have for each of your properties.",
+                      description: "IMPORTANT: The principle and interest of your average loan payment is automatically calculated and will be deducted from each property's rental income. The next step is estimating other expenses, such as taxes, insurance, property management, maintenance, CapEx, and Vacancies.",
                       number: String(String(user.propertyExpenses).split(separator: ".").first ?? "0"),
                       convert: nil,
                       isPercent: false),
             InputStep(title: "Estimated Average Appreciation",
-                      description: "Your properties will apreciate some factor every year",
+                      description: "How much do you expect your properties to appreciate every year over the long term?",
                       number: String(String(user.averageAppreciation * 100).split(separator: ".").first ?? "0") ,
                       convert: nil,
                       isPercent: true)

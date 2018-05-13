@@ -21,7 +21,7 @@ class BubbleCell: UITableViewCell {
         bubbleView.layer.shadowColor = UIColor.black.cgColor
         bubbleView.layer.shadowOffset = CGSize(width: 0, height: 10)
         bubbleView.layer.shadowRadius = 5
-        bubbleView.layer.shadowOpacity = 0.3
+        bubbleView.layer.shadowOpacity = 0.1
 
         backgroundColor = .clear
         contentView.backgroundColor = .clear

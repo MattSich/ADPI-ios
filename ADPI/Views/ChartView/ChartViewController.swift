@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import SwiftyStoreKit
 
 class ChartViewController: UIViewController {
 
@@ -53,6 +54,35 @@ class ChartViewController: UIViewController {
 
         let bubbleCellNib = UINib(nibName: "BubbleCell", bundle: nil)
         tableView.register(bubbleCellNib, forCellReuseIdentifier: kBubbleCellId)
+
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: Constants.iAPSharedSecret)
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { [weak self] result in
+            guard let weakSelf = self else { return }
+            switch result {
+            case .success(let receipt):
+                let productId = Constants.oneMonthMembershipIAP
+                // Verify the purchase of a Subscription
+                let purchaseResult = SwiftyStoreKit.verifySubscription(
+                    ofType: .autoRenewable,
+                    productId: productId,
+                    inReceipt: receipt)
+
+                switch purchaseResult {
+                case .purchased(let expiryDate, let items):
+                    print("\(productId) is valid until \(expiryDate)\n\(items)\n")
+                case .expired(let expiryDate, let items):
+                    print("\(productId) is expired since \(expiryDate)\n\(items)\n")
+                    User.logout()
+                    weakSelf.navigationController?.popToRootViewController(animated: true)
+                case .notPurchased:
+                    User.logout()
+                    weakSelf.navigationController?.popToRootViewController(animated: true)
+                }
+
+            case .error(let error):
+                print("Receipt verification failed: \(error)")
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

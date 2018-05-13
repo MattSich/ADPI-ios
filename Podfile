@@ -7,6 +7,7 @@ target 'ADPI' do
 
   pod 'Charts'
   pod 'SwiftyStoreKit'
+  pod 'Firebase/Core'
 
   target 'ADPITests' do
     inherit! :search_paths

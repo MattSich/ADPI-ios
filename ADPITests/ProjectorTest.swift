@@ -46,4 +46,15 @@ class ProjectorTest: XCTestCase {
         XCTAssertEqual(amortizationPayment.rounded(toPlaces: 2), 843.21)
     }
 
+    func testInterestPaid() {
+        let totalPayment = Projector.amortCalc(loanAmount: 80000, interestRate: 0.05, numberOfPayments: 360)
+
+        let loanSchedule = Projector.paymentBreakdown(totalMortgage: totalPayment, loanAmount: 80000, rate: 0.05, numberOfPeriods: 360)
+
+        let first = loanSchedule[0]
+
+        XCTAssertEqual(Double(round(1000*first.interest)/1000), 333.333)
+
+    }
+
 }

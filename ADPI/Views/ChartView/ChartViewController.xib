@@ -52,9 +52,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CX2-ip-vLp">
-                            <rect key="frame" x="20" y="10" width="40" height="40"/>
+                            <rect key="frame" x="20" y="12.666666666666664" width="40" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="IOi-7F-mPm"/>
+                                <constraint firstAttribute="height" constant="35" id="IOi-7F-mPm"/>
                                 <constraint firstAttribute="width" constant="40" id="fJB-Kw-JOW"/>
                             </constraints>
                         </imageView>
