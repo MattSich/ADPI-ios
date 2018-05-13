@@ -9,6 +9,8 @@
 import UIKit
 import Charts
 import SwiftyStoreKit
+import JRMFloatingAnimation
+import AudioToolbox.AudioServices
 
 class ChartViewController: UIViewController {
 
@@ -45,6 +47,11 @@ class ChartViewController: UIViewController {
         model.reloadData = { [weak self] in
             guard let weakSelf = self else { return }
             weakSelf.tableView.reloadData()
+        }
+
+        model.monthChanged = { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.addFloatingBubble()
         }
 
         updateMainLabelValues()
@@ -149,6 +156,25 @@ class ChartViewController: UIViewController {
         lineChart.leftAxis.drawAxisLineEnabled = false
         lineChart.rightAxis.enabled = false
         lineChart.xAxis.drawAxisLineEnabled = false
+    }
+
+    private func addFloatingBubble() {
+        guard let floatingView = JRMFloatingAnimationView(starting: CGPoint(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height)) else { return }
+        floatingView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        floatingView.add(#imageLiteral(resourceName: "plusBubble"))
+        floatingView.isUserInteractionEnabled = false
+        floatingView.maxFloatObjectSize = 50
+        floatingView.minFloatObjectSize = 30
+        floatingView.floatingShape = JRMFloatingShape.triangleUp
+        floatingView.fadeOut = true
+        floatingView.varyAlpha = true
+        floatingView.startingPointWidth = UIScreen.main.bounds.size.width/2
+        floatingView.removeOnCompletion = true
+        self.view.addSubview(floatingView)
+
+        floatingView.animate()
+
+        AudioServicesPlaySystemSound(1520) // Pop feedback
     }
 
     private func createDataSet(type: ChartType) -> [LineChartDataSet] {

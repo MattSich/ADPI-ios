@@ -12,13 +12,21 @@ import Charts
 class ChartViewModel {
     private var moments: [MomentProjection] = []
     var user: User!
+    var lastMonth = 0
     var currentChartType: ChartType = .equity
     public var selectedMonth: Double = 0 {
         didSet {
+            if lastMonth < currentMonthData().numberOfProperties {
+                for _ in lastMonth ..< currentMonthData().numberOfProperties {
+                    monthChanged?()
+                }
+            }
+            lastMonth = currentMonthData().numberOfProperties
             reloadData?()
         }
     }
 
+    public var monthChanged: (() -> Void)?
     public var reloadData: (() -> Void)?
     init() {
         user = User()
@@ -46,8 +54,8 @@ class ChartViewModel {
     func tableData() -> [RowItem] {
         let data = currentMonthData()
         return [
-            RowItem(top: "Savings", bottom: data.moneyInBank.monify()),
             RowItem(top: "Numer of properties", bottom: String(data.numberOfProperties)),
+            RowItem(top: "Savings", bottom: data.moneyInBank.monify()),
             RowItem(top: "Total costs this month (mortgage + expenses)", bottom: data.totalExpenses.monify()),
             RowItem(top: "Interest being paid this month", bottom: data.interestPayment.monify()),
             RowItem(top: "Equity gained this month", bottom: data.equityGained.monify()),
