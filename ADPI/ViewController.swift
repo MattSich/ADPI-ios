@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 
         let vc = InputViewController(nibName: "InputViewController", bundle: nil)
         navigationController?.pushViewController(vc, animated: false)
-        if User.exists() {
+        if User.exists() && User().confirmed {
             let vc = ChartViewController(nibName: "ChartViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: false)
         }

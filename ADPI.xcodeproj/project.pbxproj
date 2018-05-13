@@ -52,6 +52,10 @@
 		4055ACF62061FD5B00DD3B20 /* InputItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4055ACF52061FD5B00DD3B20 /* InputItemView.xib */; };
 		4055ACF82061FF3800DD3B20 /* InputItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055ACF72061FF3800DD3B20 /* InputItemView.swift */; };
 		405767DA206F066400F063ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405767D9206F066400F063ED /* Constants.swift */; };
+		40990B1120A8C341003623E5 /* ConfirmCashflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40990B1020A8C341003623E5 /* ConfirmCashflowViewController.xib */; };
+		40990B1320A8C34B003623E5 /* ConfirmCashflowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40990B1220A8C34B003623E5 /* ConfirmCashflowViewController.swift */; };
+		40990B1620A8D027003623E5 /* InfoModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40990B1520A8D027003623E5 /* InfoModal.xib */; };
+		40990B1820A8D0B0003623E5 /* InfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40990B1720A8D0B0003623E5 /* InfoModal.swift */; };
 		40CBF31B20631289009821C5 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBF31A20631289009821C5 /* ChartViewController.swift */; };
 		40CBF31D2063129E009821C5 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40CBF31C2063129E009821C5 /* ChartViewController.xib */; };
 		40CBF320206317C6009821C5 /* Projector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBF31F206317C6009821C5 /* Projector.swift */; };
@@ -129,6 +133,10 @@
 		4055ACF52061FD5B00DD3B20 /* InputItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputItemView.xib; sourceTree = "<group>"; };
 		4055ACF72061FF3800DD3B20 /* InputItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItemView.swift; sourceTree = "<group>"; };
 		405767D9206F066400F063ED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		40990B1020A8C341003623E5 /* ConfirmCashflowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmCashflowViewController.xib; sourceTree = "<group>"; };
+		40990B1220A8C34B003623E5 /* ConfirmCashflowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCashflowViewController.swift; sourceTree = "<group>"; };
+		40990B1520A8D027003623E5 /* InfoModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoModal.xib; sourceTree = "<group>"; };
+		40990B1720A8D0B0003623E5 /* InfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModal.swift; sourceTree = "<group>"; };
 		40CBF31A20631289009821C5 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		40CBF31C2063129E009821C5 /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 		40CBF31F206317C6009821C5 /* Projector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projector.swift; sourceTree = "<group>"; };
@@ -214,6 +222,7 @@
 		402E1A4720670CF400D5740E /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				40990B1420A8D00B003623E5 /* InfoModal */,
 				4001422F20A105CF002A3A52 /* SubscribeModal */,
 				402E1A4620670CE200D5740E /* ChangeDateModal */,
 			);
@@ -301,6 +310,7 @@
 		4055ACEC2061F53D00DD3B20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				40990B0D20A8C307003623E5 /* ConfirmCashflowView */,
 				402E1A342066CA8000D5740E /* SettingsView */,
 				40CBF3192063127D009821C5 /* ChartView */,
 				4055ACED2061F54400DD3B20 /* InputView */,
@@ -325,6 +335,24 @@
 				4055ACF32061F6B700DD3B20 /* NumberKey.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		40990B0D20A8C307003623E5 /* ConfirmCashflowView */ = {
+			isa = PBXGroup;
+			children = (
+				40990B1020A8C341003623E5 /* ConfirmCashflowViewController.xib */,
+				40990B1220A8C34B003623E5 /* ConfirmCashflowViewController.swift */,
+			);
+			path = ConfirmCashflowView;
+			sourceTree = "<group>";
+		};
+		40990B1420A8D00B003623E5 /* InfoModal */ = {
+			isa = PBXGroup;
+			children = (
+				40990B1520A8D027003623E5 /* InfoModal.xib */,
+				40990B1720A8D0B0003623E5 /* InfoModal.swift */,
+			);
+			path = InfoModal;
 			sourceTree = "<group>";
 		};
 		40CBF3192063127D009821C5 /* ChartView */ = {
@@ -525,6 +553,7 @@
 				402E1A4920670D0900D5740E /* ChangeDateModal.xib in Resources */,
 				402E1A362066CA8F00D5740E /* SettingsViewController.xib in Resources */,
 				4055ACE72061F43800DD3B20 /* Montserrat-Regular.ttf in Resources */,
+				40990B1120A8C341003623E5 /* ConfirmCashflowViewController.xib in Resources */,
 				4055ACEA2061F43800DD3B20 /* Montserrat-ExtraLight.ttf in Resources */,
 				402470DD206455B300C32B28 /* BubbleCell.xib in Resources */,
 				402E1A3B2066CEBC00D5740E /* SettingsCell.xib in Resources */,
@@ -534,6 +563,7 @@
 				4055ACF62061FD5B00DD3B20 /* InputItemView.xib in Resources */,
 				4055ACB42061F15E00DD3B20 /* Main.storyboard in Resources */,
 				4055ACF12061F57400DD3B20 /* InputViewController.xib in Resources */,
+				40990B1620A8D027003623E5 /* InfoModal.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +746,7 @@
 			files = (
 				402E1A292065274400D5740E /* User.swift in Sources */,
 				405767DA206F066400F063ED /* Constants.swift in Sources */,
+				40990B1320A8C34B003623E5 /* ConfirmCashflowViewController.swift in Sources */,
 				402E1A422066D9E000D5740E /* DateExtension.swift in Sources */,
 				4001423320A10603002A3A52 /* SubscribeModal.swift in Sources */,
 				4055ACF42061F6B700DD3B20 /* NumberKey.swift in Sources */,
@@ -736,6 +767,7 @@
 				4055ACF82061FF3800DD3B20 /* InputItemView.swift in Sources */,
 				402E1A322066A31E00D5740E /* ChartViewModel.swift in Sources */,
 				402470DB2063DD7400C32B28 /* ColorExtension.swift in Sources */,
+				40990B1820A8D0B0003623E5 /* InfoModal.swift in Sources */,
 				4055ACEF2061F55600DD3B20 /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

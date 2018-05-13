@@ -141,11 +141,11 @@ class InputViewController: UIViewController {
 
         if onlyOneInput == nil {
             backButton.isHidden = currentPage == 0
-            nextButton.setTitle(currentPage == controllers.count - 1 ? "Finish" : "Next", for: .normal)
+            nextButton.setTitle(currentPage == controllers.count - 1 ? "Review" : "Next", for: .normal)
         }
     }
 
-    private func finishOnboarding(_ thenGoHome: Bool = true) {
+    private func finishOnboarding(_ thenReview: Bool = true) {
         newUser.saved = Float(controllers[0].model.number) ?? 0
         newUser.cashFlow = Float(controllers[1].model.number) ?? 0
         newUser.propertyPrice = Float(controllers[2].model.number) ?? 0
@@ -155,20 +155,10 @@ class InputViewController: UIViewController {
         newUser.propertyExpenses = Float(controllers[6].model.number) ?? 0
         newUser.averageAppreciation = (Float(controllers[7].model.number) ?? 0) / 100
         newUser.save()
-        if thenGoHome {
-            navigationController?.popToRootViewController(animated: false)
+        if thenReview {
+            let reviewVC = ConfirmCashflowViewController(nibName: "ConfirmCashflowViewController", bundle: nil)
+            navigationController?.pushViewController(reviewVC, animated: true)
         }
-
-        Analytics.logEvent("onboarding_finished", parameters: [
-            "saved": "\(newUser.saved)" as NSObject,
-            "cashFlow": "\(newUser.cashFlow)" as NSObject,
-            "propertyPrice": "\(newUser.propertyPrice)" as NSObject,
-            "downPayment": "\(newUser.downPayment)" as NSObject,
-            "interestRate": "\(newUser.interestRate)" as NSObject,
-            "averageRent": "\(newUser.averageRent)" as NSObject,
-            "propertyExpenses": "\(newUser.propertyExpenses)" as NSObject,
-            "averageAppreciation": "\(newUser.averageAppreciation)" as NSObject,
-            ])
     }
 
     private func setupViews() {

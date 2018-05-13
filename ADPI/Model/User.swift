@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 class User: Codable {
 
@@ -21,6 +22,7 @@ class User: Codable {
     var propertyExpenses: Float
     var averageAppreciation: Float
     var start: Date
+    var confirmed: Bool
 
     init() {
         saved = 0
@@ -32,6 +34,7 @@ class User: Codable {
         propertyExpenses = 0
         averageAppreciation = 0.03
         start = Date()
+        confirmed = false
 
         reload()
     }
@@ -47,7 +50,12 @@ class User: Codable {
             propertyExpenses = user.propertyExpenses
             averageAppreciation = user.averageAppreciation
             start = user.start
+            confirmed = user.confirmed
         }
+    }
+
+    public func getSingleMorgage() -> Float {
+        return Float(Projector.amortCalc(loanAmount: CGFloat(propertyPrice - downPayment), interestRate: CGFloat(interestRate), numberOfPayments: Projector.monthsPerYear*Projector.numberOfYears))
     }
 
     private func getSaved() -> User? {
