@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 
         restorePurchaseButton.layer.borderColor = UIColor.appRed.cgColor
         restorePurchaseButton.layer.borderWidth = 1
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {

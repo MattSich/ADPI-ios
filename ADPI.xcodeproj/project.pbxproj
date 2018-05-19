@@ -56,6 +56,8 @@
 		40990B1320A8C34B003623E5 /* ConfirmCashflowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40990B1220A8C34B003623E5 /* ConfirmCashflowViewController.swift */; };
 		40990B1620A8D027003623E5 /* InfoModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40990B1520A8D027003623E5 /* InfoModal.xib */; };
 		40990B1820A8D0B0003623E5 /* InfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40990B1720A8D0B0003623E5 /* InfoModal.swift */; };
+		40990B1C20B09E25003623E5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40990B1B20B09E25003623E5 /* ButtonCell.swift */; };
+		40990B1E20B09E5C003623E5 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40990B1D20B09E5C003623E5 /* ButtonCell.xib */; };
 		40CBF31B20631289009821C5 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBF31A20631289009821C5 /* ChartViewController.swift */; };
 		40CBF31D2063129E009821C5 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40CBF31C2063129E009821C5 /* ChartViewController.xib */; };
 		40CBF320206317C6009821C5 /* Projector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CBF31F206317C6009821C5 /* Projector.swift */; };
@@ -137,6 +139,8 @@
 		40990B1220A8C34B003623E5 /* ConfirmCashflowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCashflowViewController.swift; sourceTree = "<group>"; };
 		40990B1520A8D027003623E5 /* InfoModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoModal.xib; sourceTree = "<group>"; };
 		40990B1720A8D0B0003623E5 /* InfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModal.swift; sourceTree = "<group>"; };
+		40990B1B20B09E25003623E5 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		40990B1D20B09E5C003623E5 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		40CBF31A20631289009821C5 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		40CBF31C2063129E009821C5 /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 		40CBF31F206317C6009821C5 /* Projector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projector.swift; sourceTree = "<group>"; };
@@ -355,6 +359,24 @@
 			path = InfoModal;
 			sourceTree = "<group>";
 		};
+		40990B1920B09E08003623E5 /* BubbleCell */ = {
+			isa = PBXGroup;
+			children = (
+				402470DC206455B300C32B28 /* BubbleCell.xib */,
+				402470DE206455BB00C32B28 /* BubbleCell.swift */,
+			);
+			path = BubbleCell;
+			sourceTree = "<group>";
+		};
+		40990B1A20B09E1C003623E5 /* ButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				40990B1B20B09E25003623E5 /* ButtonCell.swift */,
+				40990B1D20B09E5C003623E5 /* ButtonCell.xib */,
+			);
+			path = ButtonCell;
+			sourceTree = "<group>";
+		};
 		40CBF3192063127D009821C5 /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,8 +391,8 @@
 		40CBF31E20631758009821C5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				402470DC206455B300C32B28 /* BubbleCell.xib */,
-				402470DE206455BB00C32B28 /* BubbleCell.swift */,
+				40990B1A20B09E1C003623E5 /* ButtonCell */,
+				40990B1920B09E08003623E5 /* BubbleCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -562,6 +584,7 @@
 				4055ACEB2061F43800DD3B20 /* Montserrat-Medium.ttf in Resources */,
 				4055ACF62061FD5B00DD3B20 /* InputItemView.xib in Resources */,
 				4055ACB42061F15E00DD3B20 /* Main.storyboard in Resources */,
+				40990B1E20B09E5C003623E5 /* ButtonCell.xib in Resources */,
 				4055ACF12061F57400DD3B20 /* InputViewController.xib in Resources */,
 				40990B1620A8D027003623E5 /* InfoModal.xib in Resources */,
 			);
@@ -747,6 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				402E1A292065274400D5740E /* User.swift in Sources */,
+				40990B1C20B09E25003623E5 /* ButtonCell.swift in Sources */,
 				405767DA206F066400F063ED /* Constants.swift in Sources */,
 				40990B1320A8C34B003623E5 /* ConfirmCashflowViewController.swift in Sources */,
 				402E1A422066D9E000D5740E /* DateExtension.swift in Sources */,

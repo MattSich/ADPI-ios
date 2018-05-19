@@ -11,10 +11,12 @@ import Charts
 import SwiftyStoreKit
 import JRMFloatingAnimation
 import AudioToolbox.AudioServices
+import Firebase
 
 class ChartViewController: UIViewController {
 
     let kBubbleCellId = "bubbleCellId"
+    let kButtonCellId = "buttonCellId"
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var equityLabel: UILabel!
@@ -61,6 +63,9 @@ class ChartViewController: UIViewController {
 
         let bubbleCellNib = UINib(nibName: "BubbleCell", bundle: nil)
         tableView.register(bubbleCellNib, forCellReuseIdentifier: kBubbleCellId)
+
+        let buttonCellNib = UINib(nibName: "ButtonCell", bundle: nil)
+        tableView.register(buttonCellNib, forCellReuseIdentifier: kButtonCellId)
 
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: Constants.iAPSharedSecret)
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { [weak self] result in
@@ -234,16 +239,35 @@ extension ChartViewController: ChartViewDelegate {
     }
 }
 
-extension ChartViewController: UITableViewDataSource {
+extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.tableData().count
+        return section == 0 ? model.tableData().count : 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: kBubbleCellId, for: indexPath) as? BubbleCell else {
-            fatalError()
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: kBubbleCellId, for: indexPath) as? BubbleCell else {
+                fatalError()
+            }
+            cell.setup(top: model.tableData()[indexPath.row].top, bottom: model.tableData()[indexPath.row].bottom)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: kButtonCellId, for: indexPath) as? ButtonCell else {
+                fatalError()
+            }
+            return cell
         }
-        cell.setup(top: model.tableData()[indexPath.row].top, bottom: model.tableData()[indexPath.row].bottom)
-        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row == 0, let url = URL(string: "https://www.activedutypassiveincome.com/p/military-real-estate-investing-academy") {
+            Analytics.logEvent("sign_up_for_academy_selected", parameters: nil)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
