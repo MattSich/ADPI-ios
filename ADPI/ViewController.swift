@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 
         restorePurchaseButton.layer.borderColor = UIColor.appRed.cgColor
         restorePurchaseButton.layer.borderWidth = 1
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +33,38 @@ class ViewController: UIViewController {
         if User.exists() && User().confirmed {
             let vc = ChartViewController(nibName: "ChartViewController", bundle: nil)
             navigationController?.pushViewController(vc, animated: false)
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: Constants.iAPSharedSecret)
+        SwiftyStoreKit.verifyReceipt(using: appleValidator) { [weak self] result in
+            guard let weakSelf = self else { return }
+            switch result {
+            case .success(let receipt):
+                let productId = Constants.oneMonthMembershipIAP
+                // Verify the purchase of a Subscription
+                let purchaseResult = SwiftyStoreKit.verifySubscription(
+                    ofType: .autoRenewable,
+                    productId: productId,
+                    inReceipt: receipt)
+
+                switch purchaseResult {
+                case .purchased(let expiryDate, let items):
+                    print("product was purchased on \(expiryDate): \(items)")
+                    let vc = InputViewController(nibName: "InputViewController", bundle: nil)
+                    weakSelf.navigationController?.pushViewController(vc, animated: false)
+                case .expired(let expiryDate, let items):
+                    print("\(productId) is expired since \(expiryDate)\n\(items)\n")
+                case .notPurchased:
+                    print("not purchased")
+                }
+
+            case .error(let error):
+                print("Receipt verification failed: \(error)")
+            }
         }
     }
 
