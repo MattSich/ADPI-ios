@@ -8,6 +8,8 @@ target 'ADPI' do
   pod 'Charts'
   pod 'SwiftyStoreKit'
   pod 'Firebase/Core'
+  pod 'Fabric'
+  pod 'Crashlytics'
   pod 'JRMFloatingAnimation'
 
   target 'ADPITests' do

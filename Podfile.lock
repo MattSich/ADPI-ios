@@ -2,6 +2,9 @@ PODS:
   - Charts (3.0.5):
     - Charts/Core (= 3.0.5)
   - Charts/Core (3.0.5)
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.5)
   - Firebase/Core (4.9.0):
     - FirebaseAnalytics (= 4.0.9)
     - FirebaseCore (= 4.0.15)
@@ -27,12 +30,16 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - Crashlytics
+  - Fabric
   - Firebase/Core
   - JRMFloatingAnimation
   - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseCore: 3bd047463058fa6b5d312c97502c52e45401cdfb
@@ -42,6 +49,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftyStoreKit: df6a58aba530128e1c5d5ae4fe7d191e5ac50d5d
 
-PODFILE CHECKSUM: f8b536e87157bd6147c63bc5e4087fe65d35bbb1
+PODFILE CHECKSUM: f53dfc055bfbd0fd810392683d5a87721b877de8
 
 COCOAPODS: 1.4.0
