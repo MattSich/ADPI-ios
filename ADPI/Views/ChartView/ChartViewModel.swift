@@ -54,7 +54,7 @@ class ChartViewModel {
     func tableData() -> [RowItem] {
         let data = currentMonthData()
         return [
-            RowItem(top: "Numer of properties", bottom: String(data.numberOfProperties)),
+            RowItem(top: "Number of properties", bottom: String(data.numberOfProperties)),
             RowItem(top: "Savings", bottom: data.moneyInBank.monify()),
             RowItem(top: "Total costs this month (mortgage + expenses)", bottom: data.totalExpenses.monify()),
             RowItem(top: "Interest being paid this month", bottom: data.interestPayment.monify()),
